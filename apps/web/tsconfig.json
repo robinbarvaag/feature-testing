@@ -3,25 +3,20 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      "@workspace/ui/*": ["../../packages/ui/*"]
     },
     "plugins": [
       {
         "name": "next"
       }
-    ],
-    "target": "ES2017",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "incremental": true,
-    "resolveJsonModule": true,
-    "declaration": false,
-    "declarationMap": false
+    ]
   },
   "include": [
+    "next-env.d.ts",
+    "next.config.ts",
     "**/*.ts",
     "**/*.tsx",
-    "next-env.d.ts",
-    "next.config.js",
     ".next/types/**/*.ts"
   ],
   "exclude": ["node_modules"]

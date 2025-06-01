@@ -1,64 +1,68 @@
-const frameAncestors = ["localhost:3000", "*.YOURDOMAIN.com"].join(" ");
+const frameAncestors = ['localhost:3000', '*.YOURDOMAIN.com'].join(' ');
 
-const mediaSrc = ["cdn.sanity.io"].filter((e) => e).join(" ");
+const mediaSrc = ['cdn.sanity.io'].filter((e) => e).join(' ');
 
 const iframeSrcs = [
-  "*.youtube-nocookie.com",
-  "*.youtube.com",
-  "player.vimeo.com",
-  "www.google.com",
+  '*.youtube-nocookie.com',
+  '*.youtube.com',
+  'player.vimeo.com',
+  'www.google.com',
 ]
   .filter((e) => e)
-  .join(" ");
+  .join(' ');
 
-const fontSrc = ["fonts.gstatic.com", "*.hotjar.com"]
+const fontSrc = ['fonts.gstatic.com', '*.hotjar.com']
   .filter((e) => e)
-  .join(" ");
+  .join(' ');
 
 const imgSrc = [
-  "maps.googleapis.com",
-  "maps.gstatic.com",
-  "www.facebook.com",
-  "*.hotjar.com",
-  "ssl.google-analytics.com",
-  "stats.g.doubleclick.net",
+  'maps.googleapis.com',
+  'maps.gstatic.com',
+  'www.facebook.com',
+  '*.hotjar.com',
+  'ssl.google-analytics.com',
+  'stats.g.doubleclick.net',
+  'lh3.googleusercontent.com',
 ]
   .filter((e) => e)
-  .join(" ");
+  .join(' ');
 
-const scriptSrc = ["*.hotjar.com"].filter((e) => e).join(" ");
+const scriptSrc = ['*.hotjar.com'].filter((e) => e).join(' ');
 
 const scriptSrcElem = [
-  "cdn.jsdelivr.net",
-  "connect.facebook.net",
-  "maps.googleapis.com",
-  "player.vimeo.com",
-  "s.ytimg.com",
-  "www.youtube.com",
-  "ssl.google-analytics.com ",
-  "static.hotjar.com",
-  "www.googletagmanager.com",
-  "www.google.com",
-  "www.gstatic.com",
+  'cdn.jsdelivr.net',
+  'connect.facebook.net',
+  'maps.googleapis.com',
+  'player.vimeo.com',
+  's.ytimg.com',
+  'www.youtube.com',
+  'ssl.google-analytics.com ',
+  'static.hotjar.com',
+  'www.googletagmanager.com',
+  'www.google.com',
+  'www.gstatic.com',
+  'core.sanity-cdn.com',
 ]
   .filter((e) => e)
-  .join(" ");
+  .join(' ');
 
-const styleSrc = ["*.hotjar.com"].filter((e) => e).join(" ");
+const styleSrc = ['*.hotjar.com'].filter((e) => e).join(' ');
 
-const styleSrcElem = ["fonts.googleapis.com"].filter((e) => e).join(" ");
+const styleSrcElem = ['fonts.googleapis.com'].filter((e) => e).join(' ');
 
 const connectSrc = [
-  "*.algolia.net",
-  "*.algolianet.com",
-  "*.algolia.io",
-  "www.facebook.com",
-  "*.hotjar.com",
-  "*.hotjar.io",
-  "wss://*.hotjar.com",
+  '*.algolia.net',
+  '*.algolianet.com',
+  '*.algolia.io',
+  'www.facebook.com',
+  '*.hotjar.com',
+  '*.hotjar.io',
+  'wss://*.hotjar.com',
+  'sds6d0u5.api.sanity.io',
+  'wss://sds6d0u5.api.sanity.io',
 ]
   .filter((e) => e)
-  .join(" ");
+  .join(' ');
 
 const ContentSecurityPolicy = `
     default-src 'self' 'unsafe-eval';
@@ -77,36 +81,36 @@ const ContentSecurityPolicy = `
 
 const internalSecurityHeaders = [
   {
-    key: "Strict-Transport-Security",
-    value: "max-age=63072000; includeSubDomains; preload",
+    key: 'Strict-Transport-Security',
+    value: 'max-age=63072000; includeSubDomains; preload',
   },
   {
-    key: "X-XSS-Protection",
-    value: "1; mode=block",
+    key: 'X-XSS-Protection',
+    value: '1; mode=block',
   },
   {
-    key: "X-Frame-Options",
-    value: "SAMEORIGIN",
+    key: 'X-Frame-Options',
+    value: 'SAMEORIGIN',
   },
   {
-    key: "Permissions-Policy",
-    value: "camera=(), microphone=(), geolocation=()",
+    key: 'Permissions-Policy',
+    value: 'camera=(), microphone=(), geolocation=()',
   },
   {
-    key: "X-Content-Type-Options",
-    value: "nosniff",
+    key: 'X-Content-Type-Options',
+    value: 'nosniff',
   },
   {
-    key: "Referrer-Policy",
-    value: "origin-when-cross-origin",
+    key: 'Referrer-Policy',
+    value: 'origin-when-cross-origin',
   },
   {
-    key: "X-DNS-Prefetch-Control",
-    value: "on",
+    key: 'X-DNS-Prefetch-Control',
+    value: 'on',
   },
   {
-    key: "Content-Security-Policy",
-    value: ContentSecurityPolicy.replace(/\s{2,}/g, " ").trim(),
+    key: 'Content-Security-Policy',
+    value: ContentSecurityPolicy.replace(/\s{2,}/g, ' ').trim(),
   },
 ];
 

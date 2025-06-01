@@ -8,6 +8,10 @@
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
       "outputs": [".next/**", "!.next/cache/**"]
     },
+    "type": {
+      "cache": false,
+      "persistent": true
+    },
     "db:migrate:dev": {
       "cache": false,
       "persistent": true

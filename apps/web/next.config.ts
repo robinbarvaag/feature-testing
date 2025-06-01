@@ -5,10 +5,7 @@ const nextConfig: NextConfig = createNextConfig({
   isProduction: process.env.NODE_ENV === 'production',
   analyzeBundle: process.env.ANALYZE_BUNDLE === 'true',
   nextConfig: {
-    transpilePackages: ['@repo/ui', '@repo/db'],
-    experimental: {
-      reactCompiler: true,
-    },
+    transpilePackages: ['@repo/ui', '@repo/db', '@repo/sanity'],
     logging: {
       fetches: {},
     },

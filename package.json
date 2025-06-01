@@ -1,0 +1,44 @@
+{
+  "name": "turbo-template",
+  "private": true,
+  "prisma": {
+    "schema": "packages/db/prisma/schema.prisma",
+    "seed": "tsx packages/db/src/seed.ts"
+  },
+  "scripts": {
+    "build": "turbo run build",
+    "db:migrate:deploy": "turbo run db:migrate:deploy",
+    "db:migrate:dev": "turbo run db:migrate:dev",
+    "db:push": "turbo run db:push",
+    "db:seed": "turbo run db:seed",
+    "dev": "turbo run dev",
+    "format": "turbo run format",
+    "format:check": "turbo run format:check",
+    "generate": "turbo run generate",
+    "lint": "turbo run lint",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.8.0",
+    "@commitlint/config-conventional": "^19.8.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.0",
+    "prettier": "catalog:",
+    "tsx": "catalog:",
+    "turbo": "catalog:",
+    "typescript": "5.8.2"
+  },
+  "packageManager": "pnpm@9.5.0",
+  "engines": {
+    "node": ">=18"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md,css}": [
+      "prettier --write"
+    ]
+  }
+}

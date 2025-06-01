@@ -1,0 +1,14 @@
+# Vanlige mappestrukturer å ignorere
+node_modules
+.git
+.github
+.next
+out
+dist
+build
+coverage
+
+# Logg og cache-filer
+*.log
+.turbo
+.cache

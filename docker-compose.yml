@@ -1,0 +1,33 @@
+volumes:
+  database:
+    driver: local
+
+services:
+  # web:
+  #   container_name: web
+  #   build:
+  #     context: .
+  #     dockerfile: ./apps/web/Dockerfile
+  #   restart: always
+  #   ports:
+  #     - 3005:3005
+  #   networks:
+  #     - app_network
+  mysql:
+    platform: linux/amd64
+    image: mysql:8.0.32
+    container_name: turborepo_mysql
+    restart: always
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_DATABASE: turborepo
+      MYSQL_ALLOW_EMPTY_PASSWORD: 1
+    volumes:
+      - database:/var/lib/mysql
+
+# Define a network, which allows containers to communicate
+# with each other, by using their container name as a hostname
+networks:
+  app_network:
+    external: true

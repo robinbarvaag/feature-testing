@@ -1,0 +1,46 @@
+{
+  "name": "@repo/web",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --port 3000",
+    "build": "next build",
+    "analyze": "cross-env ANALYZE_BUNDLE=true next build",
+    "start": "next start",
+    "lint": "eslint . --max-warnings 0",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "check-types": "tsc --noEmit",
+    "test:pa11y": "start-server-and-test start http://localhost:3000 pa11y-ci",
+    "test:pa11y:json": "start-server-and-test start http://localhost:3000 'pa11y-ci --json > a11y-report.json'"
+  },
+  "dependencies": {
+    "@auth/prisma-adapter": "catalog:",
+    "@repo/db": "workspace:*",
+    "@repo/next-config": "workspace:^",
+    "@repo/ui": "workspace:*",
+    "babel-plugin-react-compiler": "catalog:",
+    "bcrypt-ts": "catalog:",
+    "next": "catalog:",
+    "next-auth": "catalog:",
+    "postcss": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "tailwindcss": "catalog:",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "@types/node": "catalog:",
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:",
+    "cross-env": "^7.0.3",
+    "eslint": "catalog:",
+    "pa11y": "^8.0.0",
+    "pa11y-ci": "^3.1.0",
+    "start-server-and-test": "^2.0.11",
+    "typescript": "catalog:"
+  }
+}

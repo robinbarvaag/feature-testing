@@ -108,12 +108,16 @@ export const structure = (
     .items([
       createSingleTon({ S, type: 'homePage', icon: HomeIcon }),
       S.divider(),
-      // createIndexListWithOrderableItems({
-      //   S,
-      //   index: { type: 'blogIndex', icon: BookMarked },
-      //   list: { type: 'blog', title: 'Blogs', icon: FileText },
-      //   context,
-      // }),
+      createIndexListWithOrderableItems({
+        S,
+        index: { type: 'knowledgeEntryIndex', icon: BookMarked },
+        list: {
+          type: 'knowledgeEntry',
+          title: 'Knowledge entries',
+          icon: FileText,
+        },
+        context,
+      }),
       // createList({
       //   S,
       //   type: 'faq',
